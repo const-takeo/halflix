@@ -5,6 +5,7 @@ const api = axios.create({
     params:{
         "api_key":"d4ccd4f00c0a2c7c876bd4a32e58cf76",
         "language":"ja-JP",
+        "timezone":"Asia/Tokyo"
     }
 });
 
@@ -33,7 +34,7 @@ export const moviesApi = {
     })
 }
 
-const tvApi = {
+export const tvApi = {
     topRated: () => api.get("tv/top_rated"),
     popular: () => api.get("tv/popular"),
     airingToday: () => api.get("tv/airing_today"),

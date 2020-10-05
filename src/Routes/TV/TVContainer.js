@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TVPresenter from "./TVPresenter";
+import { tvApi } from "../../api";
 
 const TVContainer = () => {
     const [topRated, setTopRated] = useState(null);
@@ -7,6 +8,24 @@ const TVContainer = () => {
     const [airingToday, setAiringToday] = useState(null);
     const [error, setError] = useState(null);
     const [loading,setLoading] = useState(true);
+    useEffect(()=>{
+        const fetchData = async () => {
+            try {
+                const {data:{results:topRated}} = await tvApi.topRated();
+                const {data:{results:popular}} = await tvApi.popular();
+                const {data:{results:airingToday}} = await tvApi.airingToday();
+                setTopRated(topRated);
+                setPopular(popular);
+                setAiringToday(airingToday);
+            } catch (error) {
+                setError("番組を見つかりませんでした。")
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
+    },[]);
+    console.log({topRated,popular,airingToday,error,loading})
     return (
         <TVPresenter 
             topRated={topRated}
