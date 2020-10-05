@@ -1,15 +1,15 @@
-#HALFLIX / HAL東京映画館　/ HAL도쿄 영화관
+# HALFLIX / HAL東京映画館　/ HAL도쿄 영화관
 
 Learning ReactJS & Typescript & ES6
 
-##Screens
+## Screens
 
--[]Home
--[]TV Shows
--[]Search
--[]Detail
+[] Home
+[] TV Shows
+[] Search
+[] Detail
 
- ##API Verbs
+ ## API Verbs
 
  -[]Now Playing(Movie)
  -[]Upcoming(Movie)
