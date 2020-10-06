@@ -30,7 +30,6 @@ const HomeContainer = () => {
         };
         fetchDate();
     },[]);
-    console.log({nowPlaying,upComing,popular,error,loading});
     return (
         <HomePresenter 
             nowPlaying={nowPlaying} 

@@ -18,7 +18,7 @@ const Sheader = styled.header`
 `;
 const Item = styled.li`
     height:50px;
-    width: 50px;
+    width: 70px;
     text-align:center;
     border-bottom: 5px solid ${props => (props.current ? "#6c5ce7" : "transparent")}; 
     transition: border-bottom 0.3s ease-in-out;
@@ -39,9 +39,9 @@ const Header = (props) => {
     return (
         <Sheader>
             <List>
-                <Item current={pathname === "/"}><Slink to="/">Movies</Slink></Item>
-                <Item current={pathname === "/tv"}><Slink to="/tv">TV</Slink></Item>
-                <Item current={pathname === "/search"}><Slink to="/search">Search</Slink></Item>
+                <Item current={pathname === "/"}><Slink to="/">ムービ</Slink></Item>
+                <Item current={pathname === "/tv"}><Slink to="/tv">テレビ</Slink></Item>
+                <Item current={pathname === "/search"}><Slink to="/search">検索</Slink></Item>
             </List>
         </Sheader>
     );

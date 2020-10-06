@@ -4,7 +4,7 @@ import Home from "Routes/Home";
 import Search from "Routes/Search";
 import TV from "Routes/TV";
 import Header from "Components/Header";
-
+import Detail from "Routes/Detail";
 
 const AppRouter = () => (    
     <Router>
@@ -19,6 +19,12 @@ const AppRouter = () => (
                 </Route>
                 <Route path="/search">
                     <Search/>
+                </Route>
+                <Route path="/movie/:id">
+                    <Detail/>
+                </Route>
+                <Route path="/show/:id">
+                    <Detail/>
                 </Route>
                 <Redirect from="*" to="/" />
             </Switch>

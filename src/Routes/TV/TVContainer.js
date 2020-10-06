@@ -25,7 +25,6 @@ const TVContainer = () => {
         };
         fetchData();
     },[]);
-    console.log({topRated,popular,airingToday,error,loading})
     return (
         <TVPresenter 
             topRated={topRated}
