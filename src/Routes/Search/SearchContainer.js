@@ -8,7 +8,8 @@ const SearchContainer = () => {
     const [movieResults, setMovieResults] = useState(null);
     const [tvResults, setTvResults] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         if (searchTerm !== "") {
             searchByTerm();
         }
@@ -26,6 +27,12 @@ const SearchContainer = () => {
             setLoading(false); 
         }
     }
+
+    const updateTerm = (e) => {
+        const {target:{value}} = e;
+        setSearchTerm(value);
+    };
+
     return (
         <SearchPresenter 
             error={error}
@@ -34,6 +41,7 @@ const SearchContainer = () => {
             tvResults={tvResults}
             searchTerm={searchTerm}
             handleSubmit={handleSubmit}
+            updateTerm={updateTerm}
             />
     );
 };

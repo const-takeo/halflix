@@ -12,12 +12,12 @@ const api = axios.create({
 export const moviesApi = {
     nowPlaying: () => api.get("movie/now_playing", {
         params: {
-            region:"jp"
+            region:"JP"
         }
     }),
     upComing: () => api.get("movie/upcoming", {
         params: {
-            region:"jp"
+            region:"JP"
         }
     }),
     popular: () => api.get("movie/popular"),
@@ -28,8 +28,8 @@ export const moviesApi = {
     }),
     search: (term) => api.get("search/movie", {
         params:{
-            query: encodeURIComponent(term),
-            region: "jp"
+            query: term,
+            region: "JP"
         }
     })
 }
@@ -45,8 +45,8 @@ export const tvApi = {
     }),
     search: (term) => api.get("search/tv", {
         params:{
-            query: encodeURIComponent(term),
-            region: "jp"
+            query: term,
+            region: "JP"
         }
     })
 }
