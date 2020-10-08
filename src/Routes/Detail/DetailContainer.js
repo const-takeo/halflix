@@ -12,8 +12,8 @@ const DetailContainer = () => {
     const parsedId = parseInt(id);
     const history = useHistory();
     const {location:{pathname}} = history;
+    const isMovie = pathname.includes("/movie/");
     useEffect(()=>{
-        const isMovie = pathname.includes("/movie/");
         if(isNaN(parsedId)) {
             return history.push("/");
         }
@@ -28,8 +28,8 @@ const DetailContainer = () => {
             } catch (error) {
                 setError("探す物が見つかりませんでした。");
             } finally {
-                setLoading(false);
                 setResult(results);
+                setLoading(false);
             }
         }
         fetchData();

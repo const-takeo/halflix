@@ -7,7 +7,7 @@ import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
-    padding: 0px 20px;
+    padding: 20px;
 `;
 
 const Form = styled.form`
@@ -66,7 +66,7 @@ const SearchPresenter = ({
                                 <Poster
                                     key={show.id} 
                                     id={show.id} 
-                                    isMovie={true} 
+                                    isMovie={false} 
                                     title={show.name} 
                                     imageURL={show.poster_path} 
                                     rating={show.vote_average}

@@ -4,7 +4,7 @@ const api = axios.create({
     baseURL: "https://api.themoviedb.org/3/",
     params:{
         "api_key":"d4ccd4f00c0a2c7c876bd4a32e58cf76",
-        "language":"ja-JP",
+        "language":"en-US",
         "timezone":"Asia/Tokyo"
     }
 });
@@ -12,7 +12,9 @@ const api = axios.create({
 export const moviesApi = {
     nowPlaying: () => api.get("movie/now_playing", {
         params: {
-            region:"JP"
+            "region":"JP",
+            append_to_response: "images",
+            include_image_language: "JP"
         }
     }),
     upComing: () => api.get("movie/upcoming", {
@@ -20,10 +22,16 @@ export const moviesApi = {
             region:"JP"
         }
     }),
-    popular: () => api.get("movie/popular"),
+    popular: () => api.get("movie/popular", {
+        params:{
+            append_to_response: "images",
+            include_image_language: "jp",
+        }
+    }),
     movieDetail: (id) => api.get(`movie/${id}`, {
         params:{
-            append_to_response: "videos"
+            region:"JP",
+            append_to_response: "videos",
         }
     }),
     search: (term) => api.get("search/movie", {
