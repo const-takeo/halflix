@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/halflix/static/js/main.5d261c76.chunk.js",
+    "main.js.map": "/halflix/static/js/main.5d261c76.chunk.js.map",
+    "runtime-main.js": "/halflix/static/js/runtime-main.425bdb18.js",
+    "runtime-main.js.map": "/halflix/static/js/runtime-main.425bdb18.js.map",
+    "static/js/2.460ae647.chunk.js": "/halflix/static/js/2.460ae647.chunk.js",
+    "static/js/2.460ae647.chunk.js.map": "/halflix/static/js/2.460ae647.chunk.js.map",
+    "index.html": "/halflix/index.html",
+    "precache-manifest.532450908c8bebaa0ecfcdc44d50ddf5.js": "/halflix/precache-manifest.532450908c8bebaa0ecfcdc44d50ddf5.js",
+    "service-worker.js": "/halflix/service-worker.js",
+    "static/js/2.460ae647.chunk.js.LICENSE.txt": "/halflix/static/js/2.460ae647.chunk.js.LICENSE.txt",
+    "static/media/no-poster-available.jpg": "/halflix/static/media/no-poster-available.e7d69c9b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.425bdb18.js",
+    "static/js/2.460ae647.chunk.js",
+    "static/js/main.5d261c76.chunk.js"
+  ]
+}
