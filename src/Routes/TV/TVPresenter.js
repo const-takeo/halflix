@@ -5,6 +5,7 @@ import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
 import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
+import Helmet from "react-helmet";
 
 const Container = styled.div`
     padding: 20px;
@@ -15,55 +16,62 @@ const TVPresenter = ({
     popular,
     airingToday,
     error,
-    loading}) => loading ? <Loader/> : 
-    <Container>
-        {topRated && topRated.length > 0 && 
-        <Section title="Top Rated Shows">
-            {topRated.map(show => (
-                    <Poster
-                        key={show.id} 
-                        id={show.id} 
-                        isMovie={false} 
-                        title={show.name} 
-                        imageURL={show.poster_path} 
-                        rating={show.vote_average} 
-                        year={show.first_air_date && show.first_air_date.substring(0,4)}
-                    />
+    loading}) => (
+        <>
+            <Helmet>
+                <title>TV Shows | HALFLIX</title>
+            </Helmet>
+             {loading ? <Loader/> : 
+                <Container>
+                    {topRated && topRated.length > 0 && 
+                    <Section title="Top Rated Shows">
+                        {topRated.map(show => (
+                                <Poster
+                                    key={show.id} 
+                                    id={show.id} 
+                                    isMovie={false} 
+                                    title={show.name} 
+                                    imageURL={show.poster_path} 
+                                    rating={show.vote_average} 
+                                    year={show.first_air_date && show.first_air_date.substring(0,4)}
+                                />
 
-            ))}
-        </Section>}
-        {popular && popular.length > 0 && 
-        <Section title="Popular">
-            {popular.map(show => (
-                    <Poster 
-                        key={show.id} 
-                        id={show.id} 
-                        isMovie={false} 
-                        title={show.name} 
-                        imageURL={show.poster_path} 
-                        rating={show.vote_average}
-                        year={show.first_air_date && show.first_air_date.substring(0,4)}
-                    />
+                        ))}
+                    </Section>}
+                    {popular && popular.length > 0 && 
+                    <Section title="Popular">
+                        {popular.map(show => (
+                                <Poster 
+                                    key={show.id} 
+                                    id={show.id} 
+                                    isMovie={false} 
+                                    title={show.name} 
+                                    imageURL={show.poster_path} 
+                                    rating={show.vote_average}
+                                    year={show.first_air_date && show.first_air_date.substring(0,4)}
+                                />
 
-            ))}
-        </Section>}
-        {airingToday && airingToday.length > 0 && 
-        <Section title="Airing Today">
-            {airingToday.map(show => (
-                    <Poster 
-                        key={show.id} 
-                        id={show.id} 
-                        isMovie={false} 
-                        title={show.name} 
-                        imageURL={show.poster_path} 
-                        rating={show.vote_average} 
-                        year={show.first_air_date && show.first_air_date.substring(0,4)}
-                    />
+                        ))}
+                    </Section>}
+                    {airingToday && airingToday.length > 0 && 
+                    <Section title="Airing Today">
+                        {airingToday.map(show => (
+                                <Poster 
+                                    key={show.id} 
+                                    id={show.id} 
+                                    isMovie={false} 
+                                    title={show.name} 
+                                    imageURL={show.poster_path} 
+                                    rating={show.vote_average} 
+                                    year={show.first_air_date && show.first_air_date.substring(0,4)}
+                                />
 
-            ))}
-        </Section>}
-        {error && <Message color="#d63031" text={error} />}
-    </Container>;
+                        ))}
+                    </Section>}
+                    {error && <Message color="#d63031" text={error} />}
+                </Container>};
+        </>
+    )
 
 TVPresenter.propTypes = {
     topRated: PropTypes.array,
